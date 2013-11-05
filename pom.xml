@@ -5,10 +5,10 @@
 	<packaging>pom</packaging>
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
-		<module>concurrent</module>
-		<module>bigpipeweb</module>
-		<module>netty</module>
-		<module>jxls</module>
-		<module>spring-mvc</module>
+		<module>practice-concurrent</module>
+		<module>practice-bigpipeweb</module>
+		<module>practice-netty</module>
+		<module>practice-jxls</module>
+		<module>practice-spring-mvc</module>
 	</modules>
 </project>
