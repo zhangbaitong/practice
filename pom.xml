@@ -10,5 +10,6 @@
 		<module>practice-netty</module>
 		<module>practice-jxls</module>
 		<module>practice-spring-mvc</module>
+		<module>practice-serviceloader</module>
 	</modules>
 </project>
