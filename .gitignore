@@ -1,10 +1,11 @@
-# maven ignore
-#target/
-#*.jar
-#*.war
-#*.zip
-#*.tar
-#*.tar.gz
+jjjjjkkkll:# maven ignore
+target/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+*.class
 
 # eclipse ignore
 #.settings/
@@ -18,11 +19,11 @@
 #*.iws
 
 # temp ignore
-#*.log
-#*.cache
-#*.diff
-#*.patch
-#*.tmp
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
 
 # system ignore
 .DS_Store
