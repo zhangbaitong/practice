@@ -1,15 +1,16 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<groupId>com.zbt</groupId>
-	<artifactId>practice</artifactId>
-	<version>0.0.1</version>
-	<packaging>pom</packaging>
-	<modelVersion>4.0.0</modelVersion>
-	<modules>
-		<module>practice-concurrent</module>
-		<module>practice-bigpipeweb</module>
-		<module>practice-netty</module>
-		<module>practice-jxls</module>
-		<module>practice-spring-mvc</module>
-		<module>practice-serviceloader</module>
-	</modules>
+        <groupId>com.zbt</groupId>
+        <artifactId>practice</artifactId>
+        <version>0.0.1</version>
+        <packaging>pom</packaging>
+        <modelVersion>4.0.0</modelVersion>
+        <modules>
+                <module>practice-concurrent</module>
+                <module>practice-bigpipeweb</module>
+                <module>practice-netty</module>
+                <module>practice-jxls</module>
+                <module>practice-spring-mvc</module>
+                <module>practice-serviceloader</module>
+                <module>practice-javascript-trident</module>
+        </modules>
 </project>
