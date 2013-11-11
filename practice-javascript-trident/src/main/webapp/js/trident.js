@@ -36,13 +36,19 @@ trident.core = (function(t){
 		t[name] = (function(){
 			return func(t);
 		})();
+	},
+	//获得模块，参数：模块名
+	requireModule = function(name){
+		//如果有层次嵌套，可以使用hasOwnProperty方法
+		return t[name];
 	}
 	return {
 		getName : function(){
 			return name;
 		},
 		definem : defModule,
-		extendm : extModule
+		extendm : extModule,
+		requirem : requireModule
 	}
 //防止对象不存在,并就进行作用于赋值
 })(window.trident = trident.t = trident || {});
@@ -100,4 +106,7 @@ log(trident.core.getName())
 log(trident.myModule.getName())
 log(trident.myModule.getName2())
 log(trident.myModule.getName3())
+
+var myModule = trident.core.requirem("myModule");
+log(myModule.getName3());
 //...............Test....................
