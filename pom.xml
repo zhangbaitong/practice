@@ -12,5 +12,7 @@
                 <module>practice-spring-mvc</module>
                 <module>practice-serviceloader</module>
                 <module>practice-javascript-trident</module>
+                <module>practice-algorithm</module>
+                <module>practice-common</module>
         </modules>
 </project>
