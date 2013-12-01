@@ -21,9 +21,9 @@ public class CalcUtil {
 	
 	public static String FILENAME_S = "D:/Documents and Settings/_jg/Desktop/test-s.txt";
 	public static String FILENAME_M = "D:/Documents and Settings/_jg/Desktop/test-d.txt";
-	public static String FILENAME_1g = "D:/Documents and Settings/_jg/Desktop/test1g.txt";
-	public static String FILENAME_S2 = "D:/Documents and Settings/_jg/Desktop/test-s2.txt";
-	public static String FILENAME = FILENAME_S2;
+	public static String FILENAME_1g = "D:/Documents and Settings/zhangtao_jg/Desktop/test1g.txt";
+	public static String FILENAME_S2 = "D:/Documents and Settings/zhangtao_jg/Desktop/test.txt";
+	public static String FILENAME = FILENAME_1g;
 	
 	static{
 		withoutKey.put("the", "");

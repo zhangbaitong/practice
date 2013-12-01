@@ -27,7 +27,7 @@ public class RunOneThread {
 			int line = 1;
 			while ((tempString = reader.readLine()) != null) {
 				//Date old = new Date();
-				CalcUtil.countString(tempString, keys);
+				//CalcUtil.countString(tempString, keys);
 				//TimeUtil.calc("count string",old);
 				line++;
 				//if(line ==  12)break;
@@ -51,17 +51,17 @@ public class RunOneThread {
 		Date old = new Date();
 		readFileByLines(CalcUtil.FILENAME);
 		Date now = new Date();
-		List<Entry<String,Integer>> retList = new ArrayList<Entry<String,Integer>>(keys.entrySet());
-		Collections.sort(retList, new Comparator<Map.Entry<String, Integer>>() {    
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {    
-                return (o2.getValue() - o1.getValue());    
-            }
-        });
-		for(int i=0;i<retList.size();i++){
-			Entry<String,Integer> e = retList.get(i);
-			System.out.println(e.getKey() + " : " + e.getValue());
-			if(i == 9 )break;
-		}
+//		List<Entry<String,Integer>> retList = new ArrayList<Entry<String,Integer>>(keys.entrySet());
+//		Collections.sort(retList, new Comparator<Map.Entry<String, Integer>>() {    
+//            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {    
+//                return (o2.getValue() - o1.getValue());    
+//            }
+//        });
+//		for(int i=0;i<retList.size();i++){
+//			Entry<String,Integer> e = retList.get(i);
+//			System.out.println(e.getKey() + " : " + e.getValue());
+//			if(i == 9 )break;
+//		}
 		TimeUtil.calc(old);
 	}
 }
