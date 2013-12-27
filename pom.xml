@@ -14,5 +14,6 @@
                 <module>practice-javascript-trident</module>
                 <module>practice-algorithm</module>
                 <module>practice-common</module>
+                <module>practice-pjax</module>
         </modules>
 </project>
