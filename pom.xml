@@ -15,5 +15,6 @@
                 <module>practice-algorithm</module>
                 <module>practice-common</module>
                 <module>practice-pjax</module>
+                <module>practice-solr</module>
         </modules>
 </project>
