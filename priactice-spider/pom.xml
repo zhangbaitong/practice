@@ -8,9 +8,9 @@
     <version>0.0.1</version>
   </parent>
   <groupId>com.zbt</groupId>
-  <artifactId>priactice-spider</artifactId>
+  <artifactId>practice-spider</artifactId>
   <version>0.0.1</version>
-  <name>priactice-spider</name>
+  <name>practice-spider</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

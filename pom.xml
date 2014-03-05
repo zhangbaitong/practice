@@ -16,7 +16,7 @@
                 <module>practice-common</module>
                 <module>practice-pjax</module>
                 <module>practice-solr</module>
-                <module>priactice-spider</module>
+                <module>practice-spider</module>
                 <module>practice-rxjava</module>
         </modules>
 </project>
