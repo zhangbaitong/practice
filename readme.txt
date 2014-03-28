@@ -11,3 +11,7 @@ git push origin master
 Rename:
 git add . -A
 -------------------------
+git config --global user.name "yourname"
+git config --global user.email yourname@xx.com
+-------------------------
+
