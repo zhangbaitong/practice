@@ -1,5 +1,5 @@
 Project for practice
-
+------------------------
 Get:
 git clone https://github.com/zhangbaitong/practice.git
 
@@ -10,3 +10,4 @@ git push origin master
 
 Rename:
 git add . -A
+-------------------------
