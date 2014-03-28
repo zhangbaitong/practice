@@ -1,4 +1,4 @@
-jjjjjkkkll:# maven ignore
+# maven ignore
 target/
 *.jar
 *.war
@@ -8,11 +8,11 @@ target/
 *.class
 
 # eclipse ignore
-#.settings/
-#.project
-#.classpath
+.settings
+.project
+.classpath
 
-# idea ignore
+#idea ignore
 #.idea/
 ##*.ipr
 ##*.iml
