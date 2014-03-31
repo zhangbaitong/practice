@@ -98,3 +98,5 @@ VIM
 
 活动监视器：在application的工具目录下
 向后删除键:fn + delete
+Boot Camp：Apple Wireless Keyboard 键盘在 Windows 中的映射
+http://support.apple.com/kb/HT1171?viewlocale=zh_CN&locale=zh_CN
