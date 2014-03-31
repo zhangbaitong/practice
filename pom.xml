@@ -20,5 +20,6 @@
                 <module>practice-spider</module>
                 <module>practice-rxjava</module>
     <module>practice-eda</module>
+    <module>practice-docs</module>
   </modules>
 </project>
