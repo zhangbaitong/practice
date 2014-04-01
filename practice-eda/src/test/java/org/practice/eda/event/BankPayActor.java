@@ -1,21 +1,42 @@
 package org.practice.eda.event;
 
-public class BankPayActor {
+public class BankPayActor implements Runnable{
 	
+	/**
+	 * 下订单业务
+	 */
 	public void makeOrder(){
 		System.out.println("I have make an order!");
 	}
 	
+	/**
+	 * 支付业务
+	 */
 	public void payAction(){
 		System.out.println("I have pay success!");
 		//付款成功后触发信息发送事件
-		Processor.trigger(new Event(BankPayActor.class.getName()));
+		Event event = new Event(BankPayActor.class.getName());
+		event.setMessage("pay action finished!");
+		Processor.getInstance().trigger(event);
 	}
 	
+	/**
+	 * 独立运行测试业务行为
+	 * @param args
+	 */
 	public static void main(String[] args){
 		BankPayActor actor = new BankPayActor();
+		actor.run();
+	}
+
+	/**
+	 * 提供多线程能力以供测试
+	 */
+	@Override
+	public void run() {
+		BankPayActor actor = new BankPayActor();
 		actor.makeOrder();
-		actor.payAction();
+		actor.payAction();		
 	}
 
 }
