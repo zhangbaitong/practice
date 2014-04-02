@@ -102,25 +102,26 @@ JavaHome设置
 	export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 	
 VIM
+
 	vim-pathogen:https://github.com/tpope/vim-pathogen
 	
 	NERD Tree：https://github.com/scrooloose/nerdtree
 
 ##环境设置
 
-几个常用的环境配置文件
+	几个常用的环境配置文件
 
-/etc/profile（用户全局）
+		/etc/profile（用户全局）
 
-/etc/bashrc(系统bash全局)
+		/etc/bashrc(系统bash全局)
 
-~/.bash_profile（用户bash）
+		~/.bash_profile（用户bash）
 	
-.bash_profile
+		.bash_profile
 
 	ll等别名设置
 	
-		用户目录下建立文件“.bash_profile”
+	用户目录下建立文件“.bash_profile”
 		
 		alias ll='ls -alF'
 		
