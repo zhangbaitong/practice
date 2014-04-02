@@ -1,19 +1,21 @@
 package org.practice.eda.event;
 
+import org.practice.eda.common.Log;
+
 public class BankPayActor implements Runnable{
 	
 	/**
 	 * 下订单业务
 	 */
 	public void makeOrder(){
-		System.out.println("I have make an order!");
+		Log.log("I have make an order!");
 	}
 	
 	/**
 	 * 支付业务
 	 */
 	public void payAction(){
-		System.out.println("I have pay success!");
+		Log.log("I have pay success!");
 		//付款成功后触发信息发送事件
 		Event event = new Event(BankPayActor.class.getName());
 		event.setMessage("pay action finished!");

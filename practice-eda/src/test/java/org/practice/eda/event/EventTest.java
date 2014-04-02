@@ -9,12 +9,6 @@ import org.practice.eda.route.RouteAlgorithm;
 
 public class EventTest extends TestCase{
 	
-	public static void main(String[] args) throws Exception {
-		//case2();
-		Thread.sleep(100 * 1000);
-		System.out.println("main is stop...");
-	}
-	
 	/**
 	 * 使用Processor添加一个订阅者
 	 */

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.practice.eda.common.Log;
 import org.practice.eda.route.RandomAlgorithm;
 import org.practice.eda.route.RoundAlgorithm;
 import org.practice.eda.route.RouteAlgorithm;
@@ -39,11 +40,11 @@ public class Processor implements Runnable{
 	 * 以独立线程的方式运行监听触发事件
 	 */
 	public void run() {
-		System.out.println("start running processor thread...");
+		Log.log("start running processor thread...");
 		while (isRunning) {
 			response();
 		}
-		System.out.println("stop running processor thread...");
+		Log.log("stop running processor thread...");
 		
 	}
 
@@ -114,32 +115,32 @@ public class Processor implements Runnable{
 		//3.目前使用生产者－消费者n对1模型
 		//TOOD：如果消费者多的话，可以考虑n对n模型，同时可以考虑更改eventlist类型，使用双端队列窃取者模式
 		try {
-			System.out.println("PROCESSOR INFO:processor is listen...!");
+			Log.log("PROCESSOR INFO:processor is listen...!");
 			Event evt = eventList.take();
-			System.out.println("PROCESSOR INFO:response is begin!");
+			Log.log("PROCESSOR INFO:response is begin!");
 			//获得当前监听列表
 			List<EventProxy> list = watcher.get(evt.getName());
 			//路由策略判断
-			System.out.println(ROUTE);
+			Log.debug(ROUTE);
 			//广播机制
 			if(ROUTE.equals(RouteAlgorithm.ROUTE_BROADCAST)){
 				for(int j=0;j<list.size();j++){
 					EventProxy wat = list.get(j);
-					System.out.println("PROCESSOR INFO:Event " + evt.getName() + " is recive!");
+					Log.log("PROCESSOR INFO:Event " + evt.getName() + " is recive!");
 					wat.recive(evt);
 				}							
 			}else{
 				//分发算法
-				System.out.println("Sum is " + list.size());
+				Log.debug("Sum is " + list.size());
 				int index = ROUTEMAP.get(ROUTE).getIndex(list.size());
-				System.out.println("Index is " + index);
+				Log.debug("Index is " + index);
 				EventProxy wat = list.get(index);
-				System.out.println("PROCESSOR INFO:Event " + evt.getName() + " is recive!");
+				Log.log("PROCESSOR INFO:Event " + evt.getName() + " is recive!");
 				wat.recive(evt);
 			}
 			//TODO:事件响应后的回调实现问题
 		} catch (InterruptedException e) {
-			System.out.println("触发事件获取失败...");
+			Log.log("触发事件获取失败...");
 			e.printStackTrace();
 		}
 		
@@ -147,11 +148,11 @@ public class Processor implements Runnable{
 	
 	public void trigger(Event evt){
 		//TODO:是否需要异步操作，需要测试，另外高并发的情况下是否存在问题
-		System.out.println("PROCESSOR INFO:Event " + evt.getName() + " is trigger!");
+		Log.log("PROCESSOR INFO:Event " + evt.getName() + " is trigger!");
 		try {
 			eventList.put(evt);
 		} catch (InterruptedException e) {
-			System.out.println("触发事件保存失败...");
+			Log.log("触发事件保存失败...");
 			e.printStackTrace();
 		}
 		//之前是顺序响应，后来改成线程消费（即异步行为，存储触发事件即可）
