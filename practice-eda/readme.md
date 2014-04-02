@@ -5,28 +5,44 @@
 ##功能
 
 1.异步的事件触发响应模式
+
 2.触发者和订阅者实现为n对1模型
+
 3.支持广播，随机，轮循路由
+
 4.支持多线程并发事件
+
 5.订阅者统计功能
+
 
 TODO:
 
 1.复合事件响应
+
 2.回调机制
 
 ##使用
 
 示例：
+
 //声明订阅者
+
 ProxyDemo proxy = new ProxyDemo();
+
 //注册事件和订阅者
+
 Processor.getInstance().addWatcher(new Event(BankPayActor.class.getName()), proxy);
+
 //业务行为
+
 BankPayActor actor = new BankPayActor();
+
 actor.makeOrder();
+
 //payAction方法触发相关事件
+
 actor.payAction();
+
 
 具体参考：org.practice.eda.event.EventTest
 
