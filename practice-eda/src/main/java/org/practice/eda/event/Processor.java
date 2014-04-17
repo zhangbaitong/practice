@@ -8,11 +8,12 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import org.practice.eda.common.Log;
+import org.practice.eda.common.api.IProcessor;
 import org.practice.eda.route.RandomAlgorithm;
 import org.practice.eda.route.RoundAlgorithm;
 import org.practice.eda.route.RouteAlgorithm;
 
-public class Processor implements Runnable{
+public class Processor implements Runnable,IProcessor{
 	
 	private static Processor processor;
 	

@@ -11,7 +11,7 @@ public class MessageActor {
 	
 	
 	public void sendMessage(String message){
-		Log.log("I send message :" + message);
+		Log.log("MessageActor","I send message :" + message);
 	}
 
 	public static void main(String[] args) {

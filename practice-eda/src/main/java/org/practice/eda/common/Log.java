@@ -3,7 +3,7 @@ package org.practice.eda.common;
 public class Log {
 	
 	
-	private static String LEVEL = "INFO";
+	private static String LEVEL = "DEBUG";
 	
 	public static String getLEVEL() {
 		return LEVEL;
