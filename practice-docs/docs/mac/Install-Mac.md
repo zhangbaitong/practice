@@ -69,6 +69,10 @@ JDK
 
 	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 	
+openvpn
+
+	Tunnelblick(开源，设置通过配置文件)，Viscosity(商业)
+	
 Mac里Java几个命令的来源
 
 	java home命令具体目录：/usr/libexec/java_home 
@@ -117,7 +121,7 @@ VIM
 
 		~/.bash_profile（用户bash）
 	
-		.bash_profile
+	.bash_profile
 
 	ll等别名设置
 	
