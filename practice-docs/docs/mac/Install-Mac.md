@@ -110,7 +110,18 @@ VIM
 	vim-pathogen:https://github.com/tpope/vim-pathogen
 	
 	NERD Tree：https://github.com/scrooloose/nerdtree
-
+	
+PHP
+	Apache:/etc/apache2/httpd.conf
+	DocumentRoot "/Library/WebServer/Documents"
+	
+PHP虚拟主机配置
+	vi /etc/apache2/httpd.conf
+	# Virtual hosts
+	Include /private/etc/apache2/extra/httpd-vhosts.conf 
+	更改文件执行权限:chmod o+x filename
+	vi /private/etc/apache2/extra/httpd-vhosts.conf
+	
 ##环境设置
 
 	几个常用的环境配置文件

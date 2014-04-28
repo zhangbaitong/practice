@@ -23,3 +23,15 @@ http://framework.zend.com/manual/2.2/en/user-guide/skeleton-application.html
 eclipse pdt（php dev tool）
 http://www.eclipse.org/pdt/downloads/
 http://download.eclipse.org/tools/pdt/updates/release
+
+
+
+##一些工具简介
+
+composer：php的扩展管理工具
+	Composer 项目官方：http://getcomposer.org
+	Composer Github项目：https://github.com/composer/composer
+	PHP Composer软件包列表：https://packagist.org/
+	
+phpredis：php的redis扩展
+	https://github.com/nicolasff/phpredis/
