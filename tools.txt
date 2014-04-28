@@ -1,0 +1,3 @@
+jetty
+	eclipse plugin	:	run jetty
+	maven plugin	:	http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html
