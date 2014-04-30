@@ -8,6 +8,7 @@
 下面有两种方法：
 第一种：利用web服务器的trimSpaces功能。
 Tomcat5 以上版本都可以使用，这是最简单的方法。主要是增加一个servlet：
+<CODE>
 <servlet>
 <servlet-name>jsp</servlet-name>
 <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
@@ -25,6 +26,7 @@ Tomcat5 以上版本都可以使用，这是最简单的方法。主要是增加
 </init-param>
 <load-on-startup>3</load-on-startup>
 </servlet>
+</CODE>
 第二种方法：这个方案只有在支持jsp 2.1的web服务器上才可以使用，如Tomcat6：
 <%@ page trimDirectiveWhespaitces=”true” %>
 第一种方法没有测试过；第二种方法是本人目前使用的方法，可以使用。
