@@ -84,3 +84,11 @@ new Thread(new ZProxyDemo()).start();
 new Thread(new ZBankPayActor()).start();
 
 具体参考：org.practice.eda.zmq.ZEventTest
+
+##可能实现
+基于spring-integration的EDA实现
+
+##相关产品
+Mule（MuleForge实现的开源扩展）
+ServiceMix
+

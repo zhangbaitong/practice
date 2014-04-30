@@ -32,5 +32,10 @@
     	<artifactId>guava</artifactId>
     	<version>10.0</version>
     </dependency>
+    <dependency>
+    	<groupId>org.springframework.integration</groupId>
+    	<artifactId>spring-integration-core</artifactId>
+    	<version>3.0.2.RELEASE</version>
+    </dependency>
   </dependencies>
 </project>
