@@ -30,6 +30,12 @@ Betterzip
 iTunes
 
 	设置一下不要拷贝音乐文件进入自己的目录
+	
+sublimetext2
+	
+	http://www.sublimetext.com/
+	
+	"open_files_in_new_window": false(喜欢在tab中打开新文件)
 
 
 ##开发软件
@@ -68,6 +74,10 @@ Eclipse
 JDK
 
 	http://www.oracle.com/technetwork/java/javase/downloads/index.html
+	
+jvisualvm
+
+	/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/bin
 	
 openvpn
 
