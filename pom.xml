@@ -22,6 +22,7 @@
     <module>practice-eda</module>
     <module>practice-docs</module>
     <module>practice-zmq</module>
-    <module></module>  <module>practice-spring-integration</module>
+    <module/>  <module>practice-spring-integration</module>
+    <module>practice-db</module>
   </modules>
 </project>
