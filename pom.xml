@@ -24,5 +24,6 @@
     <module>practice-zmq</module>
     <module/>  <module>practice-spring-integration</module>
     <module>practice-db</module>
+    <module>practice-jdk</module>
   </modules>
 </project>
