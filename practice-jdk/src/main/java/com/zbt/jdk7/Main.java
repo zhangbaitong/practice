@@ -6,9 +6,14 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -21,6 +26,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import javax.script.SimpleBindings;
+
+import sun.management.FileSystem;
 
 /**
  * http://www.oracle.com/technetwork/java/javase/jdk7-relnotes-429209.html
@@ -75,6 +82,25 @@ public class Main {
 		System.out.println("八进制："+011);
 		System.out.println("十六进制："+0x11);
 		System.out.println("二进制："+0b11);
+		
+		// 所有整数 int， short，long，byte都可以用二进制表示  
+	    // An 8-bit 'byte' value:  
+	    byte aByte = (byte) 0b00100001;  
+	  
+	    // A 16-bit 'short' value:  
+	    short aShort = (short) 0b1010000101000101;  
+	  
+	    // Some 32-bit 'int' values:  
+	    int anInt1 = 0b10100001010001011010000101000101;  
+	    int anInt2 = 0b101;  
+	    int anInt3 = 0B101; // The B can be upper or lower case.  
+	  
+	    // A 64-bit 'long' value. Note the "L" suffix:  
+	    long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L;  
+	  
+	    // 二进制在数组等的使用  
+	    final int[] phases = { 0b00110001, 0b01100010, 0b11000100, 0b10001001,  
+	    0b00010011, 0b00100110, 0b01001100, 0b10011000 };
 	}
 	
 	/**
@@ -362,7 +388,6 @@ public class Main {
 	}
 	
 	/**
-	 * 为什么没有警告？
 	 * 消除的三种方式
 	 * 1.加 annotation @SafeVarargs    
 	 * 2.加 annotation @SuppressWarnings({"unchecked", "varargs"}) 
@@ -376,16 +401,6 @@ public class Main {
 		}
 	}
 	
-	/**
-	 * 语法层面上支持集合，不再是数组的专利(jdk7没有这个特性)
-	 */
-	public static void testCollectionSupport(){
-		//final List<Integer> piDigits = [1,2,3,4,5,8]; 
-		//List<Integer> intList = [3,4,5];
-		//Set<Integer> primes = { 2, 7, 31, 127, 8191, 131071, 524287 };
-		//Map<Integer, String> platonicSolids = { 4 : "tetrahedron",       6 : "cube", 8 : "octahedron", 12 : "dodecahedron", 20 : "icosahedron"      }; 
-	}
-
 	public static void main(String[] args) throws Throwable {
 		testSwitchString();
 		testBinary();
