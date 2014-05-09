@@ -25,5 +25,6 @@
     <module/>  <module>practice-spring-integration</module>
     <module>practice-db</module>
     <module>practice-jdk</module>
+    <module>practice-servlet3</module>
   </modules>
 </project>
