@@ -12,6 +12,8 @@
 		<li><a href="hello">say hello</a></li>
 		<li><a href="login.jsp">基于Annotations的配置实践，参考LoginServlet</a></li>
 		<li><a href="filesupload.jsp">Servlet 3.0文件上传</a></li>
+		<li><a href="async">async servlet</a></li>
+		<li><a href="bigpipe">async servlet bigpipe</a></li>
 	</ul>
 </body>
 </html>
