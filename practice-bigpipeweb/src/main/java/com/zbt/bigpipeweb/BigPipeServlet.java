@@ -18,6 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 
 
 //http://localhost:8080/bigpipeweb/bigpipetest/
+/**
+ * 异步bigpipe这种实现方式存在很大问题，属于伪实现
+ * 问题：
+ * servlet线程不中断，导致异步线程的返回取决于servlet的结束时间，如果servlet结束.
+ * 但是异步线程没有完成，则没有返回结果，相当于丢失了。
+ * @author zhangbaitong
+ *
+ */
 public class BigPipeServlet extends HttpServlet {
 	 
     private static ExecutorService executor = Executors.newFixedThreadPool(500, new ThreadFactory() {
@@ -59,9 +67,11 @@ public class BigPipeServlet extends HttpServlet {
                     try {
                         // One service call is nasty and takes 50sec
                         if (id == 3) {
-                            Thread.sleep(50000);
+                            Thread.sleep(50 * 1000);
                         } else {
-                            Thread.sleep(random.nextInt(2000));
+                        	int timeSleep = random.nextInt(2 * 1000);
+                        	System.out.println("Thread id :" + id + " sleep time is : " + timeSleep);
+                            Thread.sleep(timeSleep);
                         }
                         pagelet(writer, "content" + id, "Wohooo" + id);
                     } catch (InterruptedException e) {
