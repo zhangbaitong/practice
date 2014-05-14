@@ -96,6 +96,8 @@ https://www.npmjs.org/doc/cli/npm-install.html
 
 	npm ls
 
+	npm install/uninstall(安装过程很容易出现网络问题，实践)
+
 npm install formidable（文件上传模块）（index.js目录下）
 
 	https://www.npmjs.org/package/formidable
@@ -133,3 +135,13 @@ npm install -g express-generator(安装express代码生成器)
 
    		run the app:
      	$ DEBUG=projectName ./bin/www
+
+ ##socket io
+
+ 	http://socket.io/
+
+ 	https://github.com/LearnBoost/socket.io
+
+ 	https://github.com/LearnBoost/socket.io/wiki/Rooms
+
+ 	https://github.com/Wisembly/elephant.io
