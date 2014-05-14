@@ -26,5 +26,6 @@
     <module>practice-db</module>
     <module>practice-jdk</module>
     <module>practice-servlet3</module>
+    <module>practice-nodejs</module>
   </modules>
 </project>
