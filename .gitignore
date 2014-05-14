@@ -29,3 +29,5 @@ target/
 .DS_Store
 Thumbs.db
 
+# Node.js ignore
+node_modules/
