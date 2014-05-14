@@ -78,6 +78,12 @@ express:node app/app.js
 
 访问：http://localhost:3000/
 
+socket io test:node nio/app.js
+
+chatroom : cd chatroom & DEBUG=chatroom ./bin/www
+
+访问：http://localhost:3000/
+
 
 
 ##外部模块安装（统一安装到index.js同级的node_modules目录下）
@@ -85,6 +91,10 @@ express:node app/app.js
 npm介绍
 
 https://www.npmjs.org/doc/cli/npm-install.html
+
+查看npm安装列表
+
+	npm ls
 
 npm install formidable（文件上传模块）（index.js目录下）
 
@@ -102,8 +112,24 @@ npm install express(index.js目录下4.2版本)
 
 	http://expressjs.com/guide.html
 
+npm install -g express-generator(安装express代码生成器)
+
+	/usr/local/bin/express -> /usr/local/lib/node_modules/express-generator/bin/express
+	express-generator@4.2.0 /usr/local/lib/node_modules/express-generator
+	├── mkdirp@0.3.5
+	└── commander@1.3.2 (keypress@0.1.0)
+
  npm -g install supervisor
 
  	npm config set prefix "路径"
 
  	supervisor app.js
+
+##使用express创建项目
+
+	express projectName
+		install dependencies:
+     	$ cd projectName && npm install
+
+   		run the app:
+     	$ DEBUG=projectName ./bin/www
