@@ -41,6 +41,8 @@ sublimetext2
 	http://www.sublimetext.com/
 	
 	"open_files_in_new_window": false(喜欢在tab中打开新文件)
+	
+搜狗拼音
 
 
 ##开发软件
