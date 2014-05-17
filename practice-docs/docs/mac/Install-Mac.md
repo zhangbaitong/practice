@@ -23,6 +23,11 @@ chrome
 	
 	导入书签(使用google账号)
 	
+	插件：
+		Window Resizer
+		Mobile/RWD Tester
+		oneTab(http://www.one-tab.com/)
+	
 Betterzip
 
 	RAR解压缩（Mac自己可以解决tar，zip等格式）
