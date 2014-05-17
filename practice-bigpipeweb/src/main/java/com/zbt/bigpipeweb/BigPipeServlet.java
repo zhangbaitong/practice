@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-//http://localhost:8080/bigpipeweb/bigpipetest/
+//http://localhost:8080/practice-bigpipeweb/bigpipetest/
 /**
  * 异步bigpipe这种实现方式存在很大问题，属于伪实现
  * 问题：
