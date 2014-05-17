@@ -30,7 +30,7 @@ import com.google.gson.reflect.TypeToken;
 		//largeIcon = "large icon path", 
 		//smallIcon = "small icon path",
 		//可登录的用户名写在initParams中（模拟登录，没用数据库）
-		initParams = { 
+		initParams = {
 				@WebInitParam(name = "users", value = "[{\"name\":\"test\",\"password\":\"test\"}]", description = "users and passwords")
 		})
 public class LoginServlet extends HttpServlet {
