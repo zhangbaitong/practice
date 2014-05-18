@@ -8,6 +8,9 @@ git add .
 git commit -m "your message"
 git push origin master
 
+Delete:
+git commit -a -m "your message"
+
 Rename:
 git add . -A
 -------------------------
