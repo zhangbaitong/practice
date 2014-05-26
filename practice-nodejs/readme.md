@@ -58,6 +58,24 @@ brew install nodejs
 	==> Summary
 	🍺  /usr/local/Cellar/node/0.10.26: 1121 files, 16M, built in 13.5 minutes
 
+##install for centOS6
+
+wget "http://nodejs.org/dist/v0.10.28/node-v0.10.28.pkg"
+
+rpm -i node-v0.10.28.pkg
+
+yum repolist
+
+yum repolist | grep epel
+
+rpm -Uvh http://download-i2.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+
+sudo yum install nodejs npm --enablerepo=epe
+
+node
+
+node -v
+
 ##practice
 
 helloWord:node helloworld.js
