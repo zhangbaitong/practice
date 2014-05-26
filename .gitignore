@@ -13,6 +13,9 @@ bin/
 .project
 .classpath
 
+# phpstorm ignore
+.idea/
+
 #idea ignore
 #.idea/
 ##*.ipr
