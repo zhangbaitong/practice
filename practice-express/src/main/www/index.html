@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>快递查询</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- 逻辑实现JS -->
+    <script src="js/app.js"></script>
+</head>
+<!-- 定义应用域和控制器 -->
+<body ng-app="express" ng-controller="ExpressCtrl">
+<ion-side-menus>
+
+    <!-- 中间内容 -->
+    <ion-side-menu-content>
+        <!-- 单号列表头-->
+        <ion-header-bar class="bar-dark">
+            <!-- 显示快递公司列表按钮 -->
+            <button class="button button-icon" ng-click="toggleExpresses()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            <!-- 显示当前选择的快递公司 -->
+            <h1 class="title">{{activeExpress.name}}</h1>
+            <!-- 添加新单号-->
+            <button class="button button-icon" ng-click="newOrder()">
+                <i class="icon ion-compose"></i>
+            </button>
+        </ion-header-bar>
+        <!-- 单号列表-->
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="order in activeExpress.orders"
+                          ng-click="listOrderDetail(activeExpress.name,order.num)">
+                    {{order.num}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu-content>
+
+    <!-- 快递公司列表（左侧menu） -->
+    <ion-side-menu side="left">
+        <!-- 表头 -->
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">快递公司列表</h1>
+            <button class="button button-icon ion-plus" ng-click="newExpress()">
+            </button>
+        </ion-header-bar>
+        <!-- 列表 -->
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="express in expresses" ng-click="selectExpress(express, $index)"
+                          ng-class="{active: activeExpress == express}">
+                    {{express.name}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+    <!-- 订单详情（右侧menu） -->
+    <ion-side-menu side="right">
+        <!-- 表头 -->
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">订单详情</h1>
+        </ion-header-bar>
+        <!-- 列表 -->
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item ng-repeat="detail in orderDetails">
+                    {{detail}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+
+    <script id="new-order.html" type="text/ng-template">
+
+        <div class="modal">
+
+            <!-- Modal header bar -->
+            <ion-header-bar class="bar-secondary">
+                <h1 class="title">新单号</h1>
+                <button class="button button-clear button-positive" ng-click="closeNewOrder()">取消</button>
+            </ion-header-bar>
+
+            <!-- Modal content area -->
+            <ion-content>
+
+                <form ng-submit="createOrder(order)">
+                    <div class="list">
+                        <label class="item item-input">
+                            <input type="text" placeholder="请在这里输入您要查找的单号" ng-model="order.num">
+                        </label>
+                    </div>
+                    <div class="padding">
+                        <button type="submit" class="button button-block button-positive">创建新单号</button>
+                    </div>
+                </form>
+
+            </ion-content>
+
+        </div>
+
+    </script>
+
+</ion-side-menus>
+</body>
+</html>

@@ -27,5 +27,6 @@
     <module>practice-jdk</module>
     <module>practice-servlet3</module>
     <module>practice-nodejs</module>
+    <module>practice-express</module>
   </modules>
 </project>
