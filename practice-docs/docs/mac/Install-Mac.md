@@ -127,10 +127,16 @@ VIM
 	vim-pathogen:https://github.com/tpope/vim-pathogen
 	
 	NERD Tree：https://github.com/scrooloose/nerdtree
+
+phpStorm
+
+zoc
 	
 PHP
 	Apache:/etc/apache2/httpd.conf
 	DocumentRoot "/Library/WebServer/Documents"
+
+FileZilla
 	
 PHP虚拟主机配置
 	vi /etc/apache2/httpd.conf

@@ -31,3 +31,10 @@ http://www.mantisbt.org/docs/master-1.2.x/en/administration_guide.html
 6.创建新的管理员，然后禁用administrator
 
 7.删除admin目录
+
+配置文件修改：
+
+config.inc.php
+
+$g_signup_use_captcha = OFF;
+$g_default_language = 'chinese_simplified';(然后用户自己修改语言就可以了)
