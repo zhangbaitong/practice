@@ -7,6 +7,8 @@
 
 AngularJS中文网
 http://angularjs.apjs.net/
+http://woxx.sinaapp.com/
+http://www.ituring.com.cn/minibook/303
 
 官方网站
 https://angularjs.org/
@@ -25,6 +27,12 @@ http://www.kuaidi100.com/openapi/
 
 PHP快递查询API
 http://www.widuu.com/archives/06/679.html
+
+ionic框架
+http://ionicframework.com/
+
+github
+https://github.com/driftyco/ionic
 
 
 ##使用说明
