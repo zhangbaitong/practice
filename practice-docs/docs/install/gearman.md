@@ -106,6 +106,11 @@ gearmand -d -u root
 以命令行工具来验证gearman的功能
 启动 Worker：gearman -h 172.16.1.183 -w -f wc -- wc -l &
 运行Client：gearman -h 172.16.1.183 -f wc < /etc/passwd
+
+启动 Worker：gearman -w -f wc -- wc -l &
+运行 Client：gearman -f wc < /etc/passwd
+
+
 42
 可以看到验证成功。
 
