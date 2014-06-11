@@ -25,14 +25,11 @@ public class GetMaxNum {
 			public int compare(Integer o1, Integer o2) {
 				int asize = (""+o1).length();
 				int bsize = (""+o2).length();
-				if(asize == bsize){
-					if(o1 < o2)return 1;
-					return -1;
-				}else if(asize > bsize){
+				if(asize > bsize){
 					int size = asize - bsize;
 					if(o1 < getFullNum(o2,size))return 1;
 					return -1;
-				}else{
+				}else{//相等的情况这里也可以处理
 					int size = bsize - asize;
 					if(getFullNum(o1,size) < o2)return 1;
 					return -1;
