@@ -9,15 +9,40 @@ import java.util.List;
 public class GetMaxNum {
 
 	public static void main(String[] args) {
-		secondMethod();
+		//secondMethod();
+		threeMethod();
 	}
 	
 	private static int getFullNum(int num,int size){
 		return new Double((num+1)*Math.pow(10,size)-1).intValue();
 	}
 	
+	// 分值比较
+	static class StringCompare implements Comparator<String> {
+		public int compare(String a, String b) {
+			return (a + b).compareTo(b + a);
+		}
+	}
+	
+	public static void threeMethod(){
+		int[] a = {1, 3, 10, 7, 78, 22, 16, 0, 99, 100, 9, 91, 21, 32, 31};
+		//int[] a = {1, 9, 6,7,78};
+		List<String> lists = new ArrayList<String>();
+		for (int i = 0; i < a.length; i++) {
+			lists.add(String.valueOf(a[i]));
+		}
+
+		Collections.sort(lists,new StringCompare());
+		Collections.reverse(lists);
+		for(int i=0;i<lists.size();i++){
+			//99991332312221116101000
+			System.out.print(lists.get(i));
+		}
+	}
+	
+	
 	/**
-	 * 精简版
+	 * 精简版（有BUG，无法区分7，78这样的数字谁在先后，本质上比较两个数是无法决定大小的）
 	 */
 	public static void secondMethod(){
 		List list = Arrays.asList(1, 3, 10, 22, 16, 0, 99, 100, 9, 91, 21, 32, 31);
