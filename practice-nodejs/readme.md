@@ -163,3 +163,15 @@ npm install -g express-generator(安装express代码生成器)
  	https://github.com/LearnBoost/socket.io/wiki/Rooms
 
  	https://github.com/Wisembly/elephant.io
+
+##node-inspector(debug)
+
+	https://github.com/Hussion/node-inspector
+
+##async(线程管理工具，支持多模式)
+
+	https://github.com/caolan/async
+
+##node-webkit（windows的exe打包工具）
+
+ 	https://github.com/rogerwang/node-webkit

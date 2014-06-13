@@ -44,6 +44,10 @@ sublimetext2
 	
 搜狗拼音
 
+airserver
+	
+	http://www.airserver.com/Download
+
 
 ##开发软件
 

@@ -32,3 +32,8 @@ http://zh.lucida.me/blog/an-introduction-to-swift/
 https://developer.apple.com/swift/
 
 https://developer.apple.com/library
+
+github项目
+https://github.com/search?l=Swift&amp;p=1&amp;q=swift&amp;ref=cmdform&amp;type=Repositories
+极客学院在线学习
+http://www.jikexueyuan.com/course/92.html
