@@ -19,6 +19,15 @@ ionic移动H5框架
 
 http://ionicframework.com/
 
+d3js(Data-Driven Documents)
+http://d3js.org/
+
+jqPlot
+http://www.jqplot.com/
+
+amcharts
+http://www.amcharts.com/
+
 
 
 fiddler
@@ -110,6 +119,22 @@ http://yy.aliqin.tmall.com/preheat/priceIntro.htm
 巴士在线
 
 http://wiki.infobird.com/index.php?title=从XMessager获取微信用户openid及地理坐标
+
+
+http://www.docker.com/
+
+https://github.com/dotcloud/docker
+
+
+
+
+
+
+
+
+
+
+
 
 
 
