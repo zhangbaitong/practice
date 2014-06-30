@@ -1,0 +1,1 @@
+<div id="content"><?php echo $body; ?></div>

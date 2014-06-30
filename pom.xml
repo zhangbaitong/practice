@@ -29,5 +29,7 @@
     <module>practice-nodejs</module>
     <module>practice-express</module>
     <module>practice-presentation</module>
+    <module>practice-message</module>
+    <module>practice-ypx</module>
   </modules>
 </project>

@@ -1,0 +1,1 @@
+<div id="footer" class="text-center"><h6><?php echo $footer; ?></h6></div>
