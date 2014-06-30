@@ -45,6 +45,7 @@ https://github.com/driftyco/ionic
 
     python -m SimpleHTTPServer 8000
     访问：http://localhost:8000/
+    卡片测试代码访问地址：http://localhost:8000/index2.html
 
     测试数据：
     快递公司名称    单号
