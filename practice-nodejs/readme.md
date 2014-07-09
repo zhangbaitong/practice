@@ -110,6 +110,8 @@ npm介绍
 
 https://www.npmjs.org/doc/cli/npm-install.html
 
+https://github.com/npm/npm
+
 查看npm安装列表
 
 	npm ls

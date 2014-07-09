@@ -3,7 +3,7 @@ require 'flight/Flight.php';
 include 'db/db.php';
 
 Flight::set('db', new MyDB('db/cakedb.db'));
-Flight::set('sys_title', '一品香销售系统');
+Flight::set('sys_title', 'YPX销售系统');
 //Global $db;
 //$db = new MyDB('db/cakedb.db');
 
@@ -72,14 +72,14 @@ Flight::route('/test', function(){
 function showViews($content){
     Flight::render('header', array('header' => Flight::get('sys_title')), 'header_content');
 	Flight::render('body', array('body' => $content), 'body_content');
-	Flight::render('footer', array('footer' => 'Copyright &copy; 2013 Tao Zhang<br>Powered by Flight'), 'footer_content');
+	Flight::render('footer', array('footer' => 'Copyright &copy; 2013 Baitong Zhang<br>Powered by Flight'), 'footer_content');
 	Flight::render('layout', array('title' => Flight::get('sys_title')));
 };
 
 function showViewsPage($page,$content){
     Flight::render('header', array('header' => Flight::get('sys_title')), 'header_content');
 	Flight::render($page, array('body' => $content), 'body_content');
-	Flight::render('footer', array('footer' => 'Copyright &copy; 2013 Tao Zhang<br>Powered by Flight'), 'footer_content');
+	Flight::render('footer', array('footer' => 'Copyright &copy; 2013 Baitong Zhang<br>Powered by Flight'), 'footer_content');
 	Flight::render('layout', array('title' => Flight::get('sys_title')));
 };
 

@@ -1,0 +1,10 @@
+{
+  "name": "websockettest",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "websocket-server": "*",
+    "http": "*",
+    "path": "*"
+  }
+}

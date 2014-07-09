@@ -127,6 +127,16 @@ https://github.com/dotcloud/docker
 
 
 
+403 Forbidden nginx
+
+1.index.php不存在，或nginx没有配置index.php
+
+2.file 权限，父目录和子目录都确认
+
+3.端口是否被占用，server域名是否起作用
+
+
+
 
 
 

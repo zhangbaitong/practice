@@ -10,10 +10,6 @@ http://www.ibm.com/developerworks/cn/opensource/os-gearman/index.html
 
 http://blog.s135.com/dips/
 
-监控
-
-https://github.com/yugene/Gearman-Monitor 
-
 ##简介
 Gearman是一个分发任务的程序架构，由三部分组成：
 Gearman client：提供gearman client API给应用程序调用。API可以使用C,PHP,PERL,MYSQL UDF等待呢个语言，它是请求的发起者。
@@ -66,7 +62,7 @@ worker&&client以php方式
 [worker --  172.16.1.180]
 安装gearmand如上所示
 
-安装 Gearman PHP extension
+##安装 Gearman PHP extension
 1.下载gearman-0.8.0.tgz并安装
     #cd /opt/build/
     #wget http://pecl.php.net/get/gearman-0.8.0.tgz
@@ -101,7 +97,8 @@ gearmand -d -u root
 
 ##测试：
 [Job Server (gearmand) -- 172.16.1.183]
-启动gearmand
+
+##启动gearmand
 
 以命令行工具来验证gearman的功能
 启动 Worker：gearman -h 172.16.1.183 -w -f wc -- wc -l &
@@ -138,6 +135,109 @@ echo $client->do('reverse', 'Hello World!'), "\n";
 运行 client
 php client.php
 输出：!dlroW olleH
+
+##安装gearman monitor
+
+https://github.com/yugene/Gearman-Monitor
+
+https://github.com/qzio/gearman-monitor
+
+GearmanMonitor 是用来查看 Gearman 服务状态的工具。
+包括 运行中/过的队列 Queue，运行中的所有 workers，及服务器 servers。
+GearmanMonitor 需要有 Net_Gearman 支持。
+
+
+下载并直接解压到指定PHP目录即可，然后访问对应的index.php
+
+提示缺少Net_Gearman（http://pear.php.net/package/Net_Gearman/）
+
+Easy Install
+pear install Net_Gearman
+
+Pyrus Install
+php pyrus.phar install pear/Net_Gearman
+
+这里采用第一种，需要安装php的pear
+
+下载最新版本pear:
+wget http://pear.php.net/go-pear.phar
+安装：
+php go-pear.phar
+确认各项配置文件和相关信息，然后确认
+然后询问是否同意修改php.ini(这里就是对指定的php使用的php.ini进行追加pear的path，建议先对原有的文件做个备份)
+然后安装：pear install Net_Gearman
+
+# 如果提示
+# No releases available for package "pear.php.net/Net_Gearman"
+# 则执行
+pear install  channel://pear.php.net/Net_Gearman-0.2.3
+
+然后重新启动php（如果存在php多版本则需要注意）
+kill -USR2 pieced
+
+
+
+##安装gearman manager
+GearmanManager
+GearmanManager 用来统一管理用 PHP 编写的 Gearman workers。需要 PHP 启用 pcntl。用 install/install.sh 安装完成后，根据需要和设置，修改 /etc/init.d/gearman-manager:
+
+##PATH##
+DAEMON=/usr/local/bin/gearman-manager
+PIDDIR=/tmp
+PIDFILE=${PIDDIR}/manager.pid
+LOGFILE=/tmp/gearman-manager.log
+CONFIGDIR=/data/gearman-manager
+GEARMANUSER="gearmand"
+PARAMS="-c ${CONFIGDIR}/config.ini"
+GearmanManager 安装时，选择的是 PECL library，启动时可能会遇见如下的问题：
+
+[root@www gearman-manager]# /etc/init.d/gearman-manager start
+Starting gearman-manager: [  OK  ]
+[root@www  gearman-manager]# php: libgearman/universal.cc:553: bool gearman_request_option(gearman_universal_st&, gearman_string_t&): Assertion `con->recv_state == GEARMAN_CON_RECV_UNIVERSAL_NONE' failed.
+php: libgearman/universal.cc:553: bool gearman_request_option(gearman_universal_st&, gearman_string_t&): Assertion `con->recv_state == GEARMAN_CON_RECV_UNIVERSAL_NONE' failed.
+.....
+解决办法如 Bug #60764 Enabling Non-Blocking Mode causes asseration 这里所提， 修改 pecl-manager.php ：
+
+1
+2
+//注释下面这句
+//$thisWorker->addOptions(GEARMAN_WORKER_NON_BLOCKING);
+
+
+
+##Gearman Java
+
+两个版本：
+
+java-gearman-service（官方）
+
+    https://code.google.com/p/java-gearman-service/
+
+    java-gearman-servic.jar
+
+    包括gearman server，还包括client和work客户端API
+
+gearman-java（不太推荐）
+
+    https://launchpad.net/gearman-java
+
+    gearman-java.jar
+
+    包括 work和client的API，没有server。
+
+gearman server（johnewar）
+
+    https://github.com/johnewart/gearman-java
+
+    http://code.johnewart.net/maven/org/gearman/gearman-server/0.6.0/gearman-server-0.6.0.jar
+
+    gearman-server-0.6.0.jar
+
+    包括jetty，redis和postpresql，gearman-java-master.zip中还有client和work 的客户端api
+
+
+
+
 
 Q:
 I've been trying to get Gearman compiled on CentOS 5.8 all afternoon. Unfortunately I am restricted to this version of CentOS by my CTO and how he has our entire network configured. I think it's simply because we don't have enough resources to upgrade our network... But anyways, the problem at hand.
@@ -182,3 +282,5 @@ http://www.2cto.com/os/201206/136785.html
 http://blog.s135.com/dips
 http://blog.csdn.net/hfahe/article/details/5519582
 http://hi.baidu.com/sunjiujiu/item/4406281c952cf47a7b5f2594
+
+

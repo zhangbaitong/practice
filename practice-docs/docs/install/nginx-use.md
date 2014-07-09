@@ -1,3 +1,5 @@
+http://www.nginx.cn/doc/
+
 停止操作
 停止操作是通过向nginx进程发送信号（什么是信号请参阅linux文 章）来进行的
 步骤1：查询nginx主进程号
