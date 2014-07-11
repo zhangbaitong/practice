@@ -87,6 +87,12 @@
 
 	注：由于这个库长久没有更新，已经不适用现有的node版本，所以不能运行，仅供参考
 
+##websocket-with-node
+
+	http://barretlee.com/websocket-with-node
+
+	注：网站没打开，没测试
+
 ##一些测试结果（仅供参考）
 
 
