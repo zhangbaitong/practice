@@ -1,0 +1,19 @@
+<script src="http://localhost:8001/socket.io/socket.io.js"></script>
+<script>
+    var chat = io.connect('http://localhost:8001/chat')
+            , news = io.connect('http://localhost:8001/news');
+
+    chat.on('connect', function () {
+        chat.emit('hi!');
+    });
+    chat.on('a message', function (data) {
+        console.log('chat receive a message : ', data);
+    });
+    news.on('a message', function (data) {
+        console.log('news receive a message : ', data);
+    });
+    news.on('item', function (data) {
+        news.emit('woot');
+        console.log('news receive a message : ', data);
+    });
+</script>

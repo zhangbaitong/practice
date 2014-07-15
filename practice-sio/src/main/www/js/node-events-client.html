@@ -1,0 +1,12 @@
+<script src="http://localhost:8001/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:8001');
+    socket.on('this', function (data) {
+        console.log(data);
+        socket.emit('private message', 'client-html',{ my: 'data' });
+        socket.close();
+    });
+    socket.on('user disconnected', function (data) {
+        console.log(data);
+    });
+</script>

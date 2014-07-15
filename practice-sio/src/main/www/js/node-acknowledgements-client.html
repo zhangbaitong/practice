@@ -1,0 +1,10 @@
+<script src="http://localhost:8001/socket.io/socket.io.js"></script>
+<script>
+    //var socket = io(); // TIP: io() with no args does auto-discovery
+    var socket = io.connect('http://localhost:8001');
+    socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
+        socket.emit('ferret', 'tobi', function (data) {
+            console.log(data); // data will be 'woot'
+        });
+    });
+</script>
