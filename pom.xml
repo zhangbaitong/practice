@@ -19,10 +19,10 @@
                 <module>practice-solr</module>
                 <module>practice-spider</module>
                 <module>practice-rxjava</module>
-    <module>practice-eda</module>
+                <module>practice-eda</module>
     <module>practice-docs</module>
     <module>practice-zmq</module>
-    <module/>  <module>practice-spring-integration</module>
+    <module>practice-spring-integration</module>
     <module>practice-db</module>
     <module>practice-jdk</module>
     <module>practice-servlet3</module>
@@ -31,5 +31,7 @@
     <module>practice-presentation</module>
     <module>practice-message</module>
     <module>practice-ypx</module>
+    <module>practice-gearman-java</module>
+    <module>practice-sio</module>
   </modules>
 </project>
