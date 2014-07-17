@@ -44,6 +44,14 @@ http://blog.osbutler.com/categories/node-by-example/
 
 https://github.com/nswbmw/N-chat
 
+版本号概念
+
+http://semver.org/lang/zh-CN/
+
+图片处理
+GraphicsMagick for node
+https://github.com/aheckmann/gm
+
 ##install for mac
 
 brew install nodejs
@@ -168,7 +176,7 @@ npm install -g express-generator(安装express代码生成器)
 
 ##node-inspector(debug)
 
-	https://github.com/Hussion/node-inspector
+	https://github.com/node-inspector/node-inspector
 
 ##async(线程管理工具，支持多模式)
 

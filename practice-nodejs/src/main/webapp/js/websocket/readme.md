@@ -93,6 +93,11 @@
 
 	注：网站没打开，没测试
 
+##twitter-nodejs-websocket
+
+    https://github.com/andregoncalves/twitter-nodejs-websocket
+    注：没测试
+
 ##一些测试结果（仅供参考）
 
 
