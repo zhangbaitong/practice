@@ -121,9 +121,7 @@ http://yy.aliqin.tmall.com/preheat/priceIntro.htm
 http://wiki.infobird.com/index.php?title=从XMessager获取微信用户openid及地理坐标
 
 
-http://www.docker.com/
 
-https://github.com/dotcloud/docker
 
 
 
@@ -139,10 +137,6 @@ https://github.com/dotcloud/docker
 	TermKit
 
 	待定：图像化的Terminal终端工具
-
-	http://backbonejs.org/
-
-	待定：前端的MVC框架
 
 
 

@@ -52,6 +52,49 @@ http://semver.org/lang/zh-CN/
 GraphicsMagick for node
 https://github.com/aheckmann/gm
 
+https://github.com/nickewing/line-reader
+
+让浏览器运行node
+https://github.com/substack/browserify-website
+
+
+http://substack.net/browserify
+    https://github.com/substack/node-browserify
+    https://github.com/jmars/jquery-browserify
+    https://github.com/visionmedia/jade
+    前端的MVC框架
+    http://backbonejs.org/
+    https://github.com/jashkenas/backbone
+
+    https://github.com/creationix/step
+    https://github.com/substack/dnode
+    https://github.com/substack/node-seq
+    https://github.com/substack/js-traverse
+
+
+http://www.docker.com/
+
+https://github.com/dotcloud/docker
+
+npm install jsdom
+
+htmlpaser，jsdom,node-jquery
+
+https://github.com/tmpvar/jsdom
+
+https://github.com/coolaj86/node-jquery
+
+npm install request；
+jsdom
+jQuery
+xmlhttprequest
+htmlparser
+
+request模块的request(url， callback（error, response, body))
+error（错误信息）， response（返回信息）, body（返回的页面内容）；response的statusCode属性的值等于200时表示该网站成功返回
+var $ = require(‘jQuery’);
+$(body).find(‘#nv’).html();
+
 ##install for mac
 
 brew install nodejs
@@ -185,3 +228,24 @@ npm install -g express-generator(安装express代码生成器)
 ##node-webkit（windows的exe打包工具）
 
  	https://github.com/rogerwang/node-webkit
+
+##coffee-script
+
+    安装：
+    npm install coffee-script
+
+    运行.coffee文件：
+    coffee hello.coffee
+
+    将hello.coffee编译成js：
+    coffee -c hello.coffee
+
+    资料：
+    http://coffeescript.org/（英文网）
+    http://coffee-script.org/（中文网）
+    https://github.com/jashkenas/coffeescript
+
+##log
+
+    https://github.com/flatiron/winston/
+

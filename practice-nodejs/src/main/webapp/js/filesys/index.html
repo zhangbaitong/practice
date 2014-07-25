@@ -1,0 +1,47 @@
+<html>
+<head>
+<style type="text/css">
+    *{padding:0px;margin:0px;font-family:'Source Sans Pro',Verdana,Arial,sans-serif;}
+    body{color:#eee;background-color:#000;overflow:hidden;}
+    div.messages{background-color:#111;border:1px solid #333;word-wrap:break-word;overflow:auto;margin:2px;}
+    div.messages .msg{margin:10px;color:#0c0;}#log_screens div.messages .msg p,div.log_screen div.messages .msg p *{font-size:12px;line-height:16px;font-weight:400;font-family:'Inconsolata',Courier,sans-serif;}
+</style>
+<script src="http://192.168.1.105:8765/socket.io/socket.io.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- script src="/jquery-1.11.1.min.js"></script -->
+<script>
+    var socket = io.connect('http://192.168.1.105:8765');
+    socket.on('connect', function (data) {
+        console.log(data);
+        socket.emit('clients','new client join ...');
+    });
+    socket.on('log', function (data) {
+        console.log(data);
+        $("div.msg").prepend("<p><span class='message'>"+data+"</span></p>");
+    });
+    $(document).ready(function(){
+        console.log('ready ...');
+    });
+</script>
+</head>
+<body>
+<div>
+<div class="messages" style="height: 300px;width:49%;float:left;">
+    <div class="msg">abc
+    </div>
+</div>
+<div class="messages" style="height: 300px;width:49%;float:right">
+    <div class="msg">abc
+    </div>
+</div>
+    <div class="messages" style="height: 300px;width:49%;float:left;">
+        <div class="msg">abc
+        </div>
+    </div>
+    <div class="messages" style="height: 300px;width:49%;float:right">
+        <div class="msg">abc
+        </div>
+    </div>
+</div>
+</body>
+</html>
