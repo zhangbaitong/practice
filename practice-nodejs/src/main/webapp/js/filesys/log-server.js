@@ -146,6 +146,7 @@ var server = function(){
             if(utils.config.logs['log-bottom-right']){
                 new zclient('log-bottom-right',utils.config.logs['log-bottom-right']).start();
             };
+            return;
         }
         if(utils.arguments == 'server'){
             this.server.start();

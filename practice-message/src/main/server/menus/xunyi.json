@@ -1,0 +1,44 @@
+{
+        "button": [
+            {
+                "type": "view", 
+                "name": "交换", 
+                "url": "http://xunyi-test.nvwayun.com/weixin/auth/xunyi/auth?backurl=http%3A%2F%2Fxunyi-test.nvwayun.com%2Fdefault.html", 
+                "sub_button": [ ]
+            }, 
+            {
+                "name": "名片夹", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "上一次交换", 
+                        "url": "http://xunyi-test.nvwayun.com/weixin/auth/xunyi/auth?backurl=http%3A%2F%2Fxunyi-test.nvwayun.com%2Fexchanging.html%3Fcase%3Dlast", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "名片查找", 
+                        "url": "http://xunyi-test.nvwayun.com/weixin/auth/xunyi/auth?backurl=http%3A%2F%2Fxunyi-test.nvwayun.com%2Fsearch.html", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "更多…", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "设置名片", 
+                        "url": "http://xunyi-test.nvwayun.com/weixin/auth/xunyi/auth?backurl=http%3A%2F%2Fxunyi-test.nvwayun.com%2Flist.html", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "关于易名片", 
+                        "url": "http://xunyi-test.nvwayun.com/weixin/auth/xunyi/auth?backurl=http%3A%2F%2Fxunyi-test.nvwayun.com%2Fabout.html", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }
+        ]
+    }

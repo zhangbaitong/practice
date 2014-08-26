@@ -134,6 +134,16 @@ VIM
 
 phpStorm
 
+SecureCRT
+	
+	setting
+
+	属性-默认会话-编辑默认设置
+
+	用户名：root
+	Emulation:VT100,no ANSI Color
+	Appearance:Traditional,UTF-8,monaco 12pt
+
 zoc
 	
 PHP

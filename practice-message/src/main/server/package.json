@@ -1,0 +1,16 @@
+{
+  "name": "Message",
+  "version": "0.0.1",
+  "description": "WX Message",
+  "main": "union interface",
+  "dependencies": {
+    "async": "*",
+    "express": "3.0.0",
+    "mysql": "*",
+    "optimist": "*",
+    "request": "*",
+    "underscore": "*",
+    "xml2json" : "*",
+    "date-ext" : "*"
+  }
+}

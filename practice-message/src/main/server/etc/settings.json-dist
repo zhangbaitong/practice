@@ -1,0 +1,21 @@
+{
+  "weibos" : {
+  },
+  "mysql" : {
+    "host" : "127.0.0.1",
+    "user" : "root",
+    "password" : "",
+    "database" : "xmessager"
+  },
+
+  "api" : {
+  },
+  "weixin" : {
+  	"xunyi" : {
+		"webServer" : "http://xunyi.nvwayun.com",
+		"appId" : "*********",
+    	"secret" : "************"
+	}
+  },
+  "allow" : ["127.0.0.1", '103.31.202.7']
+}

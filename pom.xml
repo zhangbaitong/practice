@@ -33,5 +33,6 @@
     <module>practice-ypx</module>
     <module>practice-gearman-java</module>
     <module>practice-sio</module>
+    <module>practice-php</module>
   </modules>
 </project>
