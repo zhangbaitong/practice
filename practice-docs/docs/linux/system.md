@@ -14,6 +14,16 @@
 
 	df -h
 
+当前文件夹下磁盘使用情况
+
+	du --max-depth=1 -h
+	du --max-depth=0 -h （当前目录）
+	du -sh /opt/temp
+
+显示当前目录总大小
+
+	du -sh
+
 硬盘IO分析
 
 	iostat -d -x -k 1 10
@@ -89,6 +99,12 @@
 	last / lastlog
 
 处理日志
+
+	清空文件
+		>test.log
+	保留文件最后一行
+		tail -1 test.log > test2.log
+		mv test2.log test.log
 
 	awk
 	sed
