@@ -53,9 +53,9 @@ http.createServer(function (req, res) {
     res.write('request successfully proxied to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
     res.end();
   });
-  
+
   process.stdout.write(connections.length + ', ');
-  
+
   if (connections.length > 110 || go) {
     go = true;
     while (connections.length) {

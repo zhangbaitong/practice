@@ -4,7 +4,7 @@ var httpProxy = require('http-proxy'),
 
 // routing hash
 addresses = {
-    'http://localhost:8009': {
+    'localhost:8009': {
         host: 'localhost',
         port: 8081
     },
