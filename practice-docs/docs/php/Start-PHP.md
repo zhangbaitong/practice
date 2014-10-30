@@ -35,6 +35,10 @@
 		
 	phpredis：php的redis扩展
 		https://github.com/nicolasff/phpredis/
+	安全检查工具：pcc
+		https://github.com/sektioneins/pcc
+		命令方式：php phpconfigcheck.php
+		web方式：phpconfigcheck.php?showall=1
 
 
 ##php的关闭和重启

@@ -60,6 +60,10 @@ https://github.com/substack/browserify-website
 时间处理
 https://github.com/moment/moment
 
+多线程处理
+https://cnodejs.org/topic/518b679763e9f8a5424406e9
+https://github.com/xk/node-threads-a-gogo
+
 http://substack.net/browserify
     https://github.com/substack/node-browserify
     https://github.com/jmars/jquery-browserify

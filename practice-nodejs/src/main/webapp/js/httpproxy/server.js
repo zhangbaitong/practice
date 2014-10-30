@@ -5,7 +5,7 @@ var http = require('http'),
 //
 // Create your proxy server and set the target in the options.
 //
-httpProxy.createProxyServer({target:'http://localhost:9000'}).listen(8000);
+httpProxy.createProxyServer({target:'http://localhost:80'}).listen(8000);
 
 //
 // Create your target server
