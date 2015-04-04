@@ -1,0 +1,21 @@
+FROM centos:centos7
+MAINTAINER chenshibin
+
+RUN rpm -ivh  ftp://rpmfind.net/linux/epel/testing/7/x86_64/e/epel-release-7-5.noarch.rpm
+RUN yum install -y nginx
+RUN yum install -y  php php-fpm php-bcmath php-cli php-devel php-common php-gd php-imap php-intl php-ldap php-mbstring php-mcrypt php-mysql php-odbc php-pdo php-pear php-pspell php-soap php-xml php-xmlrpc php-pecl-gearman php-pecl-redis
+RUN sed -i 's/;date.timezone =/date.timezone = PRC/' /etc/php.ini
+RUN sed -i 's/daemonize = no/daemonize = yes/' /etc/php-fpm.conf
+
+
+RUN touch /home/daemonize
+
+EXPOSE 80
+
+CMD  /usr/sbin/nginx && /usr/sbin/php-fpm  && tail -f /home/daemonize
+
+
+
+
+
+

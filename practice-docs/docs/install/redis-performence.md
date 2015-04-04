@@ -15,6 +15,33 @@ lsof |wc -l
 跟踪进程打开文件数
 ps -ef | grep yourapp
 ls -l /proc/yourpid/fd/ | wc -l
+查看进程限制
+cat /proc/yourpid/limits
+进程子任务描述位置
+/proc/yourpid/task
+一个进程打开的描述符号
+ll /proc/yourpid/fd/
+查看关联文件的数量
+lsof | grep redis | wc –l
+lsof | grep 31886 | wc –l
+临时修改-基于当前终端连接的session
+ulimit -SHn 2048
+永久修改
+/etc/security/limits.conf
+* hard nofile 2048
+* soft nofile 2048
+如果进程已经开启，特别是线上业务。如果不想重启进程的话，怎么动态修改呢？
+# echo -n ‘Max open files=65535:65535’ > /proc/31886/limits  
+内核参数对文件描述符也有限制，如果设置的值大于内核的限制，也是不行的：
+
+# sysctl -a|grep file-max   //查找file-max的内核参数：
+# sysctl -w file-max=65535   //更改file-max的内核参数
+Sysctl也是临时的，要想永久生效，可以通过更改sysctl的文件，编辑/etc/sysctl.conf文件，添加或修改以下一行：
+fs.file-max=65535
+总结：
+需要注意的是，文件描述符的限制，不局限于这里描述的这些，还可能和进程的启动参数、用户的环境设置有关。当然，如果是进程BUG造成文件描述符没有及时关闭回收，这增大限制也只是治标，根本上还得修复BUG。
+此外，lsof会列出系统中所占用的资源,但是这些资源不一定会占用打开的文件描述符(比如共享内存,信号量,消息队列,内存映射.等,虽然占用了这些资源,但不占用打开文件号)，因此有可能出现cat /proc/sys/fs/file-max 的值小于lsof | wc -l
+
 4.网络并发限制
 vi /etc/sysctl.conf
 net.ipv4.netfilter.ip_conntrack_max=393216

@@ -1,0 +1,84 @@
+1:安装go环境
+    1）wget http://go.googlecode.com/files/go1.1.linux-386.tar.gz
+    2）tar -C /usr/local -xzf go1.1.linux-386.tar.gz
+    3）创建/root/go目录，go下面再创建bin目录     
+    4）vim /etc/profile，在/etc/profile最后添加下面几行
+        export GOROOT=/usr/local/go
+        export GOPATH=/root/go
+        export PATH=$GOPATH/bin:$PATH
+        export PATH=$GOROOT/bin:$PATH
+    5）source /etc/profile
+    6）查看go版本
+       go version
+    7）测试go环境
+        cd /usr/local/go/test
+        go run helloworld.go
+        输出：hello, world
+
+
+2：安装swarm
+    go get -u github.com/docker/swarm
+    注：swarm文件在$GOPATH/bin目录下
+
+
+3:搭建swarm环境
+    1）用集群的方式启动docker（192.168.0.30，192.168.0.35）
+        docker -H <node_ip:node_port> -d  --pidfile="/root/go/run/docker.pid" 
+        注：指定pidfile为了避免跟docker默认启动的进程冲突，重启集群docker时，要删除/root/go/run/下dcoker.pid
+    
+    2）创建集群(192.168.0.30)：
+        swarm create
+        输出：9eb46c971e051f35dd9abe040e0c18ff
+        
+    3）加入集群（192.168.0.30，192.168.0.35）
+        swarm join --discovery token://9eb46c971e051f35dd9abe040e0c18ff --addr=<node_ip:node_port>
+
+    4）启动集群管理（any node）
+        swarm manage --discovery token://9eb46c971e051f35dd9abe040e0c18ff -H=<node_ip:node_port2>
+
+
+4：使用swarm
+       查看镜像(只能通过镜像所在结点的ip、port查看，无法查看所有结点拥有的镜像)
+           docker -H <node_ip:node_port> images
+
+       创建容器(集群会根据主机的资源消耗情况，把容器分配到适当的主机)
+           docker -H <swarm_ip:swarm_port> run -d -P --name t1 dockerfile/redis
+
+       查看集群全部容器
+           docker -H <swarm_ip:swarm_port> ps
+
+       查看某个结点全部容器
+           docker -H <node_ip:node_port> ps
+
+       进入容器(只能通过容器所在的结点的ip、port进入容器)
+           docker -H <node_ip:node_port> exec -it cname|cid /bin/bash
+
+       访问容器或访问不同宿主上容器
+           通过容器映射到宿主上的端口访问
+
+       停止容器
+           docker -H <swarm_ip:swarm_port> stop cname|cid
+           docker -H <node_ip:node_port> stop cname|cid
+          
+       删除容器
+           docker -H <swarm_ip:swarm_port> rm cname|cid
+           docker -H <node_ip:node_port> rm cname|cid
+
+
+5：容错
+      停止容器，该容器不会重新创建或分配到其他结点 
+      
+      杀掉某个结点docker进程，容器不会分配到其他结点
+
+
+6：优点
+      根据主机的资源使用情况动态分配容器
+
+
+7：不足的地方
+      1）无法查询已创建的集群
+      2）无法删除已创建的集群
+      3）除6所述优点外，其他功能跟直接使用docker一样
+
+8：安全
+    测试过程中，曾出现一个url，是否存在把数据放送到非公司服务器上的情况

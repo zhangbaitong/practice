@@ -1,0 +1,52 @@
+ab -n8000 -c10 -k  http://10.122.75.233/search.php?user_hash=o_lMBj3i-BQqfuTMMXGIDRdNxAVo
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 10.122.75.233 (be patient)
+Completed 800 requests
+Completed 1600 requests
+Completed 2400 requests
+Completed 3200 requests
+Completed 4000 requests
+Completed 4800 requests
+Completed 5600 requests
+^C
+
+Server Software:        nginx/1.6.2
+Server Hostname:        10.122.75.233
+Server Port:            80
+
+Document Path:          /search.php?user_hash=o_lMBj3i-BQqfuTMMXGIDRdNxAVo
+Document Length:        21018 bytes
+
+Concurrency Level:      10
+Time taken for tests:   3212.209 seconds
+Complete requests:      6191
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    0
+Total transferred:      131260044 bytes
+HTML transferred:       130255644 bytes
+Requests per second:    1.93 [#/sec] (mean)
+Time per request:       5188.513 [ms] (mean)
+Time per request:       518.851 [ms] (mean, across all concurrent requests)
+Transfer rate:          39.91 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   57 194.4      4    3659
+Processing:   172  607 1570.3    186   20664
+Waiting:      115  350 800.2    127   18332
+Total:        173  664 1702.5    189   21431
+
+Percentage of the requests served within a certain time (ms)
+  50%    189
+  66%    192
+  75%    195
+  80%    196
+  90%   1199
+  95%   4004
+  98%   5824
+  99%   8832
+ 100%  21431 (longest request)

@@ -1,0 +1,29 @@
+FROM centos:centos7
+MAINTAINER chenshibin
+
+RUN rpm -Uvh http://repo.webtatic.com/yum/el6/latest.rpm &&\
+    yum install -y mysql55w mysql55w-devel mysql55w-libs mysql55w-server
+
+RUN mkdir /home/databases &&\
+    mkdir /home/databases/mysql &&\
+    mkdir /home/databases/mysql/data &&\
+    chmod +w /home/databases/mysql/data &&\
+    chown -R mysql:mysql /home/databases/mysql/data &&\
+    chcon -R -t mysqld_db_t /home/databases/mysql/data 
+    
+
+RUN sed -i 's/datadir=\/var\/lib\/mysql/datadir=\/home\/databases\/mysql\/data/' /etc/my.cnf
+
+
+RUN /etc/init.d/mysqld start &&\
+    mysql -e "grant all privileges on *.* to 'root'@'%' identified by '111111';"&&\
+    mysql -e "grant all privileges on *.* to 'root'@'localhost' identified by '111111';"&&\
+    mysql -u root -p111111 -e "show databases;"
+
+RUN touch /home/daemonize
+
+EXPOSE 3306
+
+CMD /usr/bin/mysqld_safe && tail -f /home/daemonize
+
+

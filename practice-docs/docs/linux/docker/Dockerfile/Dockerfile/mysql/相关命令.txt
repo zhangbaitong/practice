@@ -1,0 +1,12 @@
+根据Dockerfile生成image
+docker build -t="centos7-mysql5.5-chen" .
+
+
+启动容器,在mysql容器中创建数据卷
+docker run  -d -p 3306:3306  -v /home/databases/mysql/data    --name=mysql5.5-chen  centos7-mysql5.5-chen
+
+
+创建数据卷容器
+docker run -d --volumes-from mysql5.5-chen  --name volumes-chen  centos:centos7  
+
+

@@ -1,0 +1,17 @@
+FROM centos:centos7
+MAINTAINER chenshibin
+
+RUN yum install -y wget tar gcc-c++ make
+RUN cd /usr/local
+RUN wget http://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz
+RUN tar -xvf node-v0.10.33.tar.gz
+RUN cd node-v0.10.33 &&\
+    ./configure  &&\
+    make  &&\ 
+    make install
+
+RUN touch /home/daemonize
+
+CMD tail -f /home/daemonize
+
+

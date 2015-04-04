@@ -1,0 +1,8 @@
+官网：https://github.com/GoogleCloudPlatform/kubernetes
+
+基于Centos7构建kubernetes容器集群管理：http://blog.liuts.com/post/247/
+
+Kubernetes系统架构简介:Kubernetes系统架构简介
+
+
+

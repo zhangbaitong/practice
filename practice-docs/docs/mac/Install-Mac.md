@@ -39,8 +39,14 @@ iTunes
 sublimetext2
 	
 	http://www.sublimetext.com/
+	http://code.tutsplus.com/tutorials/sublime-text-2-tips-and-tricks--net-21519
+	http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/
 	
 	"open_files_in_new_window": false(喜欢在tab中打开新文件)
+st2-PackageControl
+	import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')
+st3-PackageControl
+	import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 	
 搜狗拼音
 
@@ -76,6 +82,21 @@ javahl
 homebrew
 
 	http://brew.sh/
+
+	查看使用帮助
+		brew
+	安装
+		brew install xxx (安装xxx到/usr/local/Cellar然后symlink到/usr/local中)
+	更新
+		brew update
+	更新所有package
+		brew upgarde
+	删除
+		https://gist.github.com/1173223
+	下载的package存放的路径
+		brew --cache(/Library/Caches/Homebrew)
+
+
 	
 Eclipse
 

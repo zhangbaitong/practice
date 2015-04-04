@@ -1,5 +1,87 @@
 ##SYSTEM
 
+查看CentOS版本信息
+
+	cat /etc/redhat-release
+
+CentOS yum为163源
+	
+	cd /etc/yum.repos.d/
+	wget http://mirrors.163.com/.help/CentOS-Base-163.repo
+	mv CentOS-Base.repo CentOS-Base.repo.bak
+	mv CentOS-Base-163.repo CentOS-Base.repo
+	生成缓存
+	yum makecache
+
+EPEL安装(Extra Packages for Enterprise Linux，企业版Linux的额外软件包)
+
+	https://fedoraproject.org/wiki/EPEL
+	RHEL/CentOS系统有许多第三方源，比较流行的比如RpmForge，RpmFusion，EPEL，Remi等等
+	多个第三方源，可能会因此产生冲突——一个软件包可以从多个源获取，一些源会替换系统的基础软件包，从而可能会产生意想不到的错误。已知的就有Rpmforge与EPEL会产生冲突。
+	6.x
+	http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html
+	http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+	5.x
+	http://download.fedoraproject.org/pub/epel/5/i386/repoview/epel-release.html
+	http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+	注意EPEL 的安装包是独立编译的，所以它可以安装在32位和64位系统中。
+
+	安装
+	cat /etc/RedHat-release
+	wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+	rpm -ivh epel-release-6-8.noarch.rpm|rpm -ivh epel-release*
+	查看源列表
+	yum repolist
+	repo文件位置
+	/etc/yum.repos.d/epel.repo
+
+	优先级插件Yum Priorities
+	http://wiki.centos.org/PackageManagement/Yum/Priorities
+	安装
+	yum install yum-priorities
+	修改配置
+	vim /etc/yum/pluginconf.d/priorities.conf
+	添加
+	[main]
+	enabled=1
+	修改repo文件
+	vi /etc/yum.repos.d/CentOS-Base.repo
+	将下面的文本分别添加到 Base, Updates, Addons, 和 Extras 这几个源记录的后面*
+	priority=1
+	将下面的文本添加到 CentOSPlus 源记录的后面*
+	priority=2
+	* 源记录（repository entry）是由 [ 和 ] 括起来的源名称。例如，Base 源记录就标记为 [base] 。
+	** 优先级由 1 ~ 99 的 99 个数表示，1 的优先级最高。优先级小的源即使有某软件的较新版本，如果优先级高的源中没有，在启用该插件的情况下，系统也无法安装/升级到该较新版本。图形界面的 YUM 工具一般默认就已经包含了优先级插件。
+	*** 要禁用 YUM 优先级功能，只需要在（1.A.） /etc/yum/pluginconf.d/priorities.conf 中将 enable=1 改为 enable=0 即可。不建议！
+
+查看当前登录者
+	tty为直接连接电脑
+	pts为远程连接电脑
+	谁登录了
+		who
+	我的登录信息
+		who am i(who -m)
+	显示标题
+		who -H
+	显示本地系统节点的运行级别
+		who -r
+	显示所有用户的所有信息
+		who -aH
+	显示当前用户名
+		whoami
+	计算登录人数
+		who |wc -l
+	计算登录并使用人数
+		w |wc -l
+	显示登录和使用状态
+		w
+	显示上次重启时间
+		who -b
+	统计登录人数
+		who -q
+	显示登录人得空闲状态
+		who -uH
+
 内存使用情况
 
 	free -m
@@ -9,6 +91,34 @@
 硬盘及分区
 
 	fdisk -l
+
+挂载数据磁盘
+	查看磁盘分区（并获取磁盘代号）
+		fdisk -l
+	查看磁盘格式
+		df -Th
+	创建分区
+		fdisk /dev/xvde
+		n（创建）
+		e(扩展)
+		1（第几个扩展分区）
+		回车（选择默认起始块数）
+		回车（选择默认结束块数）
+		w（保存）
+	确认信息
+		fdisk -l
+	格式化
+		mkfs -t ext3 -c /dev/xvde(会执行check，这里可以跳过)
+	创建目录
+		mkdir /data
+	挂载
+		mount /dev/xvde /data
+	查看
+		df -Th
+	设置自动挂载
+		vi /etc/fstab
+		/dev/xvde /data ext3 defaults 0 3
+
 
 硬盘空间使用情况
 

@@ -1,0 +1,54 @@
+[root@localhost ~]# ab -n8000 -c500 -k  http://10.122.75.233/search.php?user_hash=o_lMBj3i-BQqfuTMMXGIDRdNxAVo
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 10.122.75.233 (be patient)
+Completed 800 requests
+Completed 1600 requests
+Completed 2400 requests
+Completed 3200 requests
+Completed 4000 requests
+Completed 4800 requests
+Completed 5600 requests
+^C
+
+Server Software:        nginx/1.6.2
+Server Hostname:        10.122.75.233
+Server Port:            80
+
+Document Path:          /search.php?user_hash=o_lMBj3i-BQqfuTMMXGIDRdNxAVo
+Document Length:        21018 bytes
+
+Concurrency Level:      500
+Time taken for tests:   3099.696 seconds
+Complete requests:      5606
+Failed requests:        2
+   (Connect: 0, Receive: 0, Length: 2, Exceptions: 0)
+Write errors:           0
+Keep-Alive requests:    0
+Total transferred:      124208152 bytes
+HTML transferred:       123219466 bytes
+Requests per second:    1.81 [#/sec] (mean)
+Time per request:       276462.395 [ms] (mean)
+Time per request:       552.925 [ms] (mean, across all concurrent requests)
+Transfer rate:          39.13 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0  466 1598.5    117   31341
+Processing:   175 29367 50664.0    504  616356
+Waiting:        0 3771 13920.8    216  216219
+Total:        179 29833 51109.9    600  617611
+
+Percentage of the requests served within a certain time (ms)
+  50%    600
+  66%  13283
+  75%  45153
+  80%  61769
+  90%  122736
+  95%  124056
+  98%  154153
+  99%  220758
+ 100%  617611 (longest request)
+[root@localhost ~]# 
