@@ -63,3 +63,8 @@ service iptalbes restart
 sysctl -a | grep conntrack(自动调整为哈希表大小的8倍)
 不要在/etc/sysctl.conf中设置以下两项的值：
 net.ipv4.netfilter.ip_conntrack_max　net.ipv4.ip_conntrack_max
+
+5.网络状态
+socket 的 FIN_WAIT_1
+可能由于服务端还没有收到客户端反馈信息，客户端就已经断开了
+net.ipv4.tcp_fin_timeout = 60
