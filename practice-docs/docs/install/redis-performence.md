@@ -68,3 +68,15 @@ net.ipv4.netfilter.ip_conntrack_max　net.ipv4.ip_conntrack_max
 socket 的 FIN_WAIT_1
 可能由于服务端还没有收到客户端反馈信息，客户端就已经断开了
 net.ipv4.tcp_fin_timeout = 60
+
+
+
+/etc/security/limits.conf
+* hard nofile 32768
+* soft nofile 32768
+
+chkconfig --add redis
+
+chkconfig --list
+
+chkconfig --level 3 redis on
