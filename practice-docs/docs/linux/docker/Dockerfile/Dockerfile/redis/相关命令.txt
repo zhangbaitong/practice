@@ -1,6 +1,0 @@
-根据Dockerfile生成image
-docker build -t="centos7-redis3.0-chen" .
-
-
-启动容器
-docker run -d  -p 6379:6379  --name redis3.0-chen centos7-redis3.0-chen

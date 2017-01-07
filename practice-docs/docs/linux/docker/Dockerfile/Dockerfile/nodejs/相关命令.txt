@@ -1,6 +1,0 @@
-根据Dockerfile生成image
-docker build -t="centos7-node-chen" .
-
-
-在mysql容器中创建数据卷
-docker  run -d  -v /www/business_card/XMessager:/www/business_card/XMessager  --name node-chen  centos7-node-chen
